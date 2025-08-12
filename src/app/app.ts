@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { CourseCard } from './Components/course-card/course-card';
 import { COURSES } from '../environments/db.data';
+import { CourseType } from './Models/courseModel';
 
 @Component({
   selector: 'app-root',
@@ -15,4 +16,8 @@ export class App {
   RxJsCourse = COURSES[1];
   NgRxCourse = COURSES[2];
   BeginnersCourse = COURSES[3];
+
+  handleCardClick(data: CourseType) {
+   console.log("hi From parent:", data)
+  }
 }

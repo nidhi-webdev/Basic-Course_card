@@ -1,5 +1,5 @@
 <nav> </nav>
-<app-course-card [course]="coreCourse"></app-course-card>
-<app-course-card [course]="RxJsCourse"></app-course-card>
-<app-course-card [course]="NgRxCourse"></app-course-card>
-<app-course-card [course]="BeginnersCourse"></app-course-card>
+<app-course-card (CardClicked)="handleCardClick($event)" [course]="coreCourse"></app-course-card>
+<app-course-card (CardClicked)="handleCardClick($event)" [course]="RxJsCourse"></app-course-card>
+<app-course-card (CardClicked)="handleCardClick($event)" [course]="NgRxCourse"></app-course-card>
+<app-course-card (CardClicked)="handleCardClick($event)" [course]="BeginnersCourse"></app-course-card>
