@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-// import { NgIf } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CourseType } from '../../Models/courseModel';
 
 @Component({
@@ -10,8 +9,18 @@ import { CourseType } from '../../Models/courseModel';
 })
 export class CourseCard {
 
-  @Input() course!: CourseType;
+  @Input({
+    required: true
+  }) course!: CourseType;
+
+  @Output()
+  CardClicked = new EventEmitter<CourseType>();
 
   constructor() {}
+
+  onCourseView() {
+    this.CardClicked.emit(this.course);
+    console.log("Clicked From Cards")
+  }
 
 }
