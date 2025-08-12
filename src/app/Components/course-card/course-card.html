@@ -1,9 +1,15 @@
 <div class="course-card">
-  <div class="course-tittle"> 
-    Angular Core Deep Dive 
+  <div class="course-title"> 
+    {{ course.description}}
   </div>
-  <img width="300" alt="Angular logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1024px-Angular_full_color_logo.svg.png?20160527092314">
-  <div class="Course-description"> 
-    This is a sample course description. Learn Angular from scratch and master core concepts!
+  <img width="300" [alt]="course.description" [src]="course.iconUrl">
+  <div class="course-description"> 
+    {{ course.longDescription }}
+  </div>
+  <div class="course-category">
+    Category: {{ course.category }}
+  </div>
+  <div class="course-lessons">
+    Lessons: {{ course.lessonsCount }}
   </div>
 </div>

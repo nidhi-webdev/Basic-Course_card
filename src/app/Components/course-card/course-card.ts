@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+// import { NgIf } from '@angular/common';
+import { CourseType } from '../../Models/courseModel';
 
 @Component({
   selector: 'app-course-card',
@@ -7,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './course-card.css'
 })
 export class CourseCard {
+
+  @Input() course!: CourseType;
+
+  constructor() {}
 
 }
