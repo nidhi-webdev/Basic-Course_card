@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0; /* Remove any default padding */
+}
+
+nav {
+  background: #1976d2;
+  color: #fff;
+  padding: 18px 32px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.15);
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 32px;
+  margin-top: 0; /* Ensure no margin above nav */
+  display: flex;
+  align-items: center;
+}
+
+nav::before {
+  content: "Angular Course Portal";
+}
