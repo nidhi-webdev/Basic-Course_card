@@ -21,3 +21,15 @@ nav {
 nav::before {
   content: "Angular Course Portal";
 }
+
+.is-first {
+  border-top: 2px solid red;
+  padding-top: 20px;
+}
+.is-last {
+  border-top: 2px solid red;
+  padding-top: 20px;
+}
+.even {
+ background: red;
+}

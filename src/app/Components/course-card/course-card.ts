@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, input, Input, Output } from '@angular/core';
 import { CourseType } from '../../Models/courseModel';
 
 @Component({
@@ -11,7 +11,13 @@ export class CourseCard {
 
   @Input({
     required: true
-  }) course!: CourseType;
+  }) 
+  course!: CourseType;
+
+  @Input({
+    required: true
+  })
+  index: number | undefined;
 
   @Output()
   CardClicked = new EventEmitter<CourseType>();

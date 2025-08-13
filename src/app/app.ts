@@ -12,10 +12,7 @@ import { CourseType } from './Models/courseModel';
 export class App {
   protected readonly title = signal('Basic');
 
-  coreCourse = COURSES[0];
-  RxJsCourse = COURSES[1];
-  NgRxCourse = COURSES[2];
-  BeginnersCourse = COURSES[3];
+   coreCourse = COURSES;
 
   handleCardClick(data: CourseType) {
    console.log("hi From parent:", data)

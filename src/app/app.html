@@ -1,5 +1,20 @@
 <nav> </nav>
-<app-course-card (CardClicked)="handleCardClick($event)" [course]="coreCourse"></app-course-card>
-<app-course-card (CardClicked)="handleCardClick($event)" [course]="RxJsCourse"></app-course-card>
-<app-course-card (CardClicked)="handleCardClick($event)" [course]="NgRxCourse"></app-course-card>
-<app-course-card (CardClicked)="handleCardClick($event)" [course]="BeginnersCourse"></app-course-card>
+@for (item of coreCourse; track item.id; let index = $index; let count = $count) {
+<!-- here track is the tracking function  and takes the unique property 
+ from the course Thats y we have given the id because id is unique and if there is nothing 
+ uniuqe in the list then we can write instead of track item.id , track $index-->
+ <h1> {{count}} </h1>
+<app-course-card 
+(CardClicked)="handleCardClick($event)" 
+[course]="item" [index] = "index" 
+[class.is-first] = "$first"
+[class.is-last] = "$last"
+[class.even] = "$even"
+[class.odd] = "$odd"
+/>
+
+}
+@empty {
+  <h1> No Course Found </h1>
+}
+
