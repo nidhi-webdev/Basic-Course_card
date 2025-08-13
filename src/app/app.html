@@ -1,4 +1,8 @@
 <nav> </nav>
+<div class="pipe" style="text-align: center;"> 
+  {{date | date: 'MMM dd yyyy'}}
+</div>
+
 @for (item of coreCourse; track item.id; let index = $index; let count = $count) {
 <!-- here track is the tracking function  and takes the unique property 
  from the course Thats y we have given the id because id is unique and if there is nothing 
