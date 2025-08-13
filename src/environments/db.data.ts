@@ -4,7 +4,7 @@ export const COURSES: any = [
     description: "Angular Core Deep Dive",
     iconUrl: 'https://newtoneducate.com/wp-content/uploads/2022/05/Angular-10-1.png',
     longDescription: "A detailed walk-through of the most important parts of Angular Core.",
-    category: 'ADVANCED',
+    category: 'INTERMIDIATE',
   },
   {
     id: 2,
