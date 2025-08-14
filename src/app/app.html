@@ -8,7 +8,7 @@
  from the course Thats y we have given the id because id is unique and if there is nothing 
  uniuqe in the list then we can write instead of track item.id , track $index-->
  <h1> {{count}} </h1>
-<app-course-card 
+<app-course-card #myhtml
 (CardClicked)="handleCardClick($event)" 
 [course]="item" [index] = "index" 
 [class.is-first] = "$first"
