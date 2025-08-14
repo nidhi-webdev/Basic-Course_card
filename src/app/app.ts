@@ -2,12 +2,13 @@ import { AfterViewInit, Component, ElementRef, QueryList, signal, ViewChildren }
 import { CourseCard } from './Components/course-card/course-card';
 import { COURSES } from '../environments/db.data';
 import { CourseType } from './Models/courseModel';
-import { DatePipe } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
+
 
 
 @Component({
   selector: 'app-root',
-  imports: [ CourseCard, DatePipe],
+  imports: [ CourseCard, DatePipe, CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

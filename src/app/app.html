@@ -1,5 +1,5 @@
 <nav> </nav>
-<div class="pipe" style="text-align: center;"> 
+<div class="pipe" style="text-align: center;">
   {{date | date: 'MMM dd yyyy'}}
 </div>
 
@@ -7,18 +7,19 @@
 <!-- here track is the tracking function  and takes the unique property 
  from the course Thats y we have given the id because id is unique and if there is nothing 
  uniuqe in the list then we can write instead of track item.id , track $index-->
- <h1> {{count}} </h1>
-<app-course-card #myhtml
+<h1> {{count}} </h1>
+<ng-template #blankImage>
+  <p> No Image is avaible yet </p>
+  <img
+    src="https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg">
+</ng-template>
+
+<app-course-card #myhtml *ngIf="item.iconUrl; else blankImage"
 (CardClicked)="handleCardClick($event)" 
-[course]="item" [index] = "index" 
-[class.is-first] = "$first"
-[class.is-last] = "$last"
-[class.even] = "$even"
-[class.odd] = "$odd"
-/>
+[course]="item" [index]="index"
+  [class.is-first]="$first" [class.is-last]="$last" [class.even]="$even" [class.odd]="$odd" />
 
 }
 @empty {
-  <h1> No Course Found </h1>
+<h1> No Course Found </h1>
 }
-
