@@ -14,7 +14,7 @@
     src="https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg">
 </ng-template>
 
-<app-course-card #myhtml *ngIf="item.iconUrl; else blankImage"
+<app-course-card #myhtml *ngIf="item.iconUrl; else blankImage" 
 (CardClicked)="handleCardClick($event)" 
 [course]="item" [index]="index"
   [class.is-first]="$first" [class.is-last]="$last" [class.even]="$even" [class.odd]="$odd" />
@@ -23,3 +23,5 @@
 @empty {
 <h1> No Course Found </h1>
 }
+
+<input type="text" appHighlighted placeholder="Type something and press enter" style="margin: 0 0 20px 0;">

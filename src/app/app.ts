@@ -3,12 +3,12 @@ import { CourseCard } from './Components/course-card/course-card';
 import { COURSES } from '../environments/db.data';
 import { CourseType } from './Models/courseModel';
 import { CommonModule, DatePipe } from '@angular/common';
-
+import {Highlighted} from '../app/Directives/highlighted'
 
 
 @Component({
   selector: 'app-root',
-  imports: [ CourseCard, DatePipe, CommonModule],
+  imports: [ CourseCard, DatePipe, CommonModule, Highlighted],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
