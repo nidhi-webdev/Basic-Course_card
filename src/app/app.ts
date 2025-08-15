@@ -3,33 +3,33 @@ import { CourseCard } from './Components/course-card/course-card';
 import { COURSES } from '../environments/db.data';
 import { CourseType } from './Models/courseModel';
 import { CommonModule, DatePipe } from '@angular/common';
-import {Highlighted} from '../app/Directives/highlighted';
-import { Observable, of } from 'rxjs';
+// import {Highlighted} from '../app/Directives/highlighted';
+// import { Observable, of } from 'rxjs';
 
 
 @Component({
   selector: 'app-root',
-  imports: [ CourseCard, DatePipe, CommonModule, Highlighted],
+  imports: [CourseCard, DatePipe, CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App implements AfterViewInit{
-  
+export class App implements AfterViewInit {
+
   protected readonly title = signal('Basic');
 
-  @ViewChildren('myhtml', {read: ElementRef})
+  @ViewChildren('myhtml', { read: ElementRef })
   htmlElement!: QueryList<ElementRef>
 
   ngAfterViewInit(): void {
-    this.htmlElement.forEach( elementHtml => {
+    this.htmlElement.forEach(elementHtml => {
       elementHtml.nativeElement.style.backgroundColor = 'red';
     })
   }
 
-   coreCourse = COURSES;
+  coreCourse = COURSES;
 
   handleCardClick(data: CourseType) {
-   console.log("hi From parent:", data)
+    console.log("hi From parent:", data)
   }
 
   // for Pipe
@@ -37,4 +37,11 @@ export class App implements AfterViewInit{
 
   //asyn 
   // courser$: Observable<any[]> = of(COURSES)
+
+  // using Change Detection.onpush
+  receivedData: string = '';
+
+  handledataFromParent(data: string) {
+    this.receivedData = data;
+  }
 }
