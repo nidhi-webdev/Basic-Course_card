@@ -3,7 +3,8 @@ import { CourseCard } from './Components/course-card/course-card';
 import { COURSES } from '../environments/db.data';
 import { CourseType } from './Models/courseModel';
 import { CommonModule, DatePipe } from '@angular/common';
-import {Highlighted} from '../app/Directives/highlighted'
+import {Highlighted} from '../app/Directives/highlighted';
+import { Observable, of } from 'rxjs';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class App implements AfterViewInit{
     })
   }
 
-   coreCourse = COURSES;
+  //  coreCourse = COURSES;
 
   handleCardClick(data: CourseType) {
    console.log("hi From parent:", data)
@@ -33,4 +34,7 @@ export class App implements AfterViewInit{
 
   // for Pipe
   date = new Date();
+
+  //asyn 
+  courser$: Observable<any[]> = of(COURSES)
 }
