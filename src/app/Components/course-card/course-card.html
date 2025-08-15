@@ -3,9 +3,12 @@
         {{index}} {{ course.description}}
     </div>
     <img width="300" [alt]="course.description" [src]="course.iconUrl">
+
+    <!-- Change Detection  -->
     <div class="course-description">
-        {{ course.longDescription }}
+       Edit Title: <input #inputChange [value]="course.description" (keyup)="Onchange(inputChange.value)" >
     </div>
+    
     <div class="course-category">
         @switch (course.category) {
         @case ("BEGINNER") {

@@ -29,4 +29,9 @@ export class CourseCard {
     console.log("Clicked From Cards")
   }
 
+  // change Detection 
+  Onchange(newValue: string) {
+   this.course.description = newValue;
+  }
+
 }

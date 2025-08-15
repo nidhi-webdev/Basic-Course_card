@@ -26,7 +26,7 @@ export class App implements AfterViewInit{
     })
   }
 
-  //  coreCourse = COURSES;
+   coreCourse = COURSES;
 
   handleCardClick(data: CourseType) {
    console.log("hi From parent:", data)
@@ -36,5 +36,5 @@ export class App implements AfterViewInit{
   date = new Date();
 
   //asyn 
-  courser$: Observable<any[]> = of(COURSES)
+  // courser$: Observable<any[]> = of(COURSES)
 }

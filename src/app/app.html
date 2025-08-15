@@ -3,11 +3,11 @@
   {{date | date: 'MMM dd yyyy'}}
 </div>
 
-<!-- @for (item of coreCourse; track item.id; let index = $index; let count = $count) { -->
+@for (item of coreCourse; track item.id; let index = $index; let count = $count) {
 <!-- here track is the tracking function  and takes the unique property 
  from the course Thats y we have given the id because id is unique and if there is nothing 
  uniuqe in the list then we can write instead of track item.id , track $index-->
-<!-- <h1> {{count}} </h1>
+<h1> {{count}} </h1>
 <ng-template #blankImage>
   <p> No Image is avaible yet </p>
   <img
@@ -22,15 +22,15 @@
 }
 @empty {
 <h1> No Course Found </h1>
-} -->
+}
 
 <!-- async -->
-<ul>
+<!-- <ul>
   <li *ngFor="let course of courser$ | async">
     {{course.description}}
     {{course.longDescription}}
   </li>
-</ul>
+</ul> -->
 
 
 
